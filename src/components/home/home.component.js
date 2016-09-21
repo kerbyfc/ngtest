@@ -8,8 +8,8 @@ export let HomeComponent = {
     /* @ngInject */
     controller: class HomeCtrl {
         /* @ngInject */
-        constructor($state) {
-            Object.assign(this, {$state});
+        constructor($scope, $state) {
+            $scope.title = 'Best 10 Books & Authors';
         }
     }
 };
