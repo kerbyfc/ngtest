@@ -12,7 +12,6 @@ export let eDropdown = {
   replace: true,
   templateUrl: template,
   bindings: {
-    label: '@',
     icon: '@',
     items: '<',
     onSelect: '&',

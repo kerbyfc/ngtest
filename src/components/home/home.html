@@ -1,6 +1,39 @@
 <navbar></navbar>
 
-{{title}}
+<header class="panel panel-default col-xs-12">
+  <div class="panel-body">
+    <h1 class="text-center">{{title}}</h1>
+  </div>
+</header>
 
-<div class="container">
-</div>
+<section class="row home-panels">
+  <section class="col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Book's rating</div>
+      <div class="panel-body" ng-show="loading">
+        Loading...
+      </div>
+      <ul class="list-group">
+        <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | orderBy:bookRatingOrder">
+          {{$index}}. {{book.title}} <small class="text-muted">by {{book.author}}</small>
+        </a>
+      </ul>
+    </div>
+  </section>
+
+  <section class="col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Author's rating</div>
+      <div class="panel-body" ng-show="loading">
+        Loading...
+      </div>
+      <ul class="list-group">
+        <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | orderBy: '-reviewCount'">
+          {{$index}}. {{book.author}}
+        </a>
+      </ul>
+    </div>
+  </section>
+
+  <loader-overlay loading="{{loading}}"></loader-overlay>
+</section>
