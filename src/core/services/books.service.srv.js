@@ -1,12 +1,10 @@
 /* @ngInject */
-export default function SomeService($http) {
-    const url = '/books';
+export default function BookService($http) {
 
-    const exports = {
-        fetch
-    };
-
-    return exports;
+    /**
+     * For test purposes only
+     */
+    const url = '/assets/books.mock.json';
 
     /**
      * Fetch all books
@@ -14,4 +12,8 @@ export default function SomeService($http) {
     function fetch() {
         return $http.get(url);
     }
+
+    return {
+        fetch
+    };
 }
