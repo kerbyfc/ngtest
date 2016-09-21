@@ -15,7 +15,7 @@
       </div>
       <ul class="list-group">
         <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | orderBy:bookRatingOrder">
-          {{$index}}. {{book.title}} <small class="text-muted">by {{book.author}}</small>
+          {{$index + 1}}. {{book.title}} <small class="text-muted">by {{book.author}}</small>
         </a>
       </ul>
     </div>
@@ -28,9 +28,9 @@
         Loading...
       </div>
       <ul class="list-group">
-        <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | orderBy: '-reviewCount'">
-          {{$index}}. {{book.author}}
-        </a>
+        <li class="list-group-item" ng-repeat="book in books | orderBy: '-reviewCount'">
+          {{$index + 1}}. {{book.author}}
+        </li>
       </ul>
     </div>
   </section>
