@@ -22,8 +22,8 @@ export let HomeComponent = {
             };
 
             BooksService.fetch()
-                .then((response) => {
-                    $scope.books = response.data;
+                .then((books) => {
+                    $scope.books = books;
                 })
                 .finally(() => {
                     $scope.loading = false;
