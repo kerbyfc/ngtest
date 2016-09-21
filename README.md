@@ -10,7 +10,7 @@ My first ng project based on [supernova starter kit](https://github.com/orizens/
 4. ~~Navbar~~
 5. ~~Books fetching~~
 6. ~~Home (top) page implementation~~
-7. Book preview page implementation
+7. ~~Book preview page implementation~~
 8. Search page implementation\
   8.1. Show all books\
   8.2. Add filter control\
