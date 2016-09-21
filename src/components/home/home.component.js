@@ -8,7 +8,8 @@ export let HomeComponent = {
     /* @ngInject */
     controller: class HomeCtrl {
         /* @ngInject */
-        constructor($scope, $state) {
+        constructor($scope, $state, BooksService) {
+            BooksService.fetch();
             $scope.title = 'Best 10 Books & Authors';
         }
     }
