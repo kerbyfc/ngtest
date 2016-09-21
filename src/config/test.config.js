@@ -1,6 +1,7 @@
 import angular from 'angular';
+import {APP_NAME} from '../vars';
 
-angular.module('myApp')
+angular.module(APP_NAME)
     .config(config);
 
 /* @ngInject */

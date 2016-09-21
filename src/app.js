@@ -14,10 +14,10 @@ import AppCore from './core';
 import { AppComponent } from './app.component';
 
 import Home from './components/home';
+import {APP_NAME} from './vars';
 
-const appName = 'myApp';
 
-angular.module(appName, [
+angular.module(APP_NAME, [
   // framework wide components
   AngularUiRouter,
   AngularAnimate,
@@ -37,7 +37,7 @@ angular.module(appName, [
 /* @ngInject */
 function config ($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
 
-  localStorageServiceProvider.setPrefix(appName);
+  localStorageServiceProvider.setPrefix(APP_NAME);
 
   $stateProvider
     .state('home', {
@@ -49,5 +49,5 @@ function config ($stateProvider, $urlRouterProvider, localStorageServiceProvider
 }
 
 angular.element(document).ready(() => {
-  angular.bootstrap(document, [appName]);
+  angular.bootstrap(document, [APP_NAME]);
 });
