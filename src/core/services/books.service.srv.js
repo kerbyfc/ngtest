@@ -1,17 +1,17 @@
 /* @ngInject */
-export default function SomeService ($http) {
-  const url = 'https://www.googleapis.com/youtube/v3/search';
-  const exports = {
-    search
-  };
+export default function SomeService($http) {
+    const url = '/books';
 
-  return exports;
+    const exports = {
+        fetch
+    };
 
-  ///////////////
+    return exports;
 
-  function search (query){
-    return $http.get(url, {
-      params: { q: query }
-    });
-  }
+    /**
+     * Fetch all books
+     */
+    function fetch() {
+        return $http.get(url);
+    }
 }
