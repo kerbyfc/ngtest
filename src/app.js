@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 
 import Home from './components/home';
 import Navbar from './components/navbar';
+import Book from './components/book';
 import {APP_NAME} from './vars';
 
 angular.module(APP_NAME, [
@@ -30,6 +31,7 @@ angular.module(APP_NAME, [
 
   // ui-components
   Home,
+  Book,
   Navbar
 ])
 .config(config)
@@ -44,6 +46,10 @@ function config ($stateProvider, $urlRouterProvider, localStorageServiceProvider
     .state('home', {
       url: '/',
       component: 'home'
+    })
+    .state('book', {
+      url: '/book/:title',
+      component: 'book'
     });
 
   $urlRouterProvider.otherwise('/');

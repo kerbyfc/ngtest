@@ -1,0 +1,34 @@
+<navbar></navbar>
+
+<header class="panel panel-default col-xs-12 book-header">
+  <loader-overlay loading="{{loading}}"></loader-overlay>
+
+  <div class="panel-body">
+    <h1 class="text-center">
+      {{title}}
+      <small ng-if="book" class="text-muted">
+        by <i>{{book.author}}</i>
+      </small>
+    </h1>
+  </div>
+
+</header>
+
+<section class="book row" ng-if="book">
+
+  <section class="col-xs-4">
+    <img class="book-img" src="{{book.img}}"/>
+  </section>
+
+  <section class="col-xs-8">
+    <h2>{{book.sub_title}}</h2>
+
+    <blockquote ng-repeat="review in book.critic_reviews" class="blockquote blockquote-reverse">
+      <p class="m-b-0">{{review.snippet}}</p>
+      <footer class="blockquote-footer">
+        {{review.star_rating}} <i class="fa fa-star" aria-hidden="true"></i>
+        by <i>{{review.source}}</i>
+      </footer>
+    </blockquote>
+  </section>
+</section>
