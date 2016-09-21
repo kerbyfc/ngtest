@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const getPath = (pathToFile) => path.resolve(__dirname, pathToFile);
 
 module.exports = {
@@ -41,6 +41,10 @@ module.exports = {
     }, {
       test: /\.html$/,
       loader: 'ngtemplate!html',
+      exclude: /(index)/
+    }, {
+      test: /\.json$/,
+      loader: 'json',
       exclude: /(index)/
     }, {
       test: /\.less$/,
@@ -90,6 +94,14 @@ module.exports = {
     // See: https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       template: 'html!./src/index.html'
-    })
+    }),
+
+    /**
+     * For test purposes only
+     */
+    new CopyWebpackPlugin([{
+      from: 'tests/mocks',
+      to: 'assets'
+    }])
   ]
 };

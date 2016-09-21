@@ -83,6 +83,9 @@ module.exports = {
     }, {
       from: 'src/assets',
       to: 'assets'
+    }, {
+      from: 'tests/mocks',
+      to: 'assets'
     }])
   ]
 };
