@@ -22,6 +22,18 @@ export default function BookService($http, $q) {
     }
 
     /**
+     * Set default book img
+     */
+    function parseBooks(books) {
+        return books.map((book) => {
+            if (!book.img) {
+                book.img = 'https://images.freecreatives.com/wp-content/uploads/2015/05/3d-book-smart-object.png';
+            }
+            return book;
+        });
+    }
+
+    /**
      * Fetch all books
      */
     function fetch(clearCache = false) {
@@ -30,7 +42,10 @@ export default function BookService($http, $q) {
         }
 
         return $http.get(url).then((response) => {
-            books = response.data; // cache
+            /**
+             * Cache books
+             */
+            books = parseBooks(response.data);
             return books;
         });
     }
