@@ -21,14 +21,27 @@ export default function BookService($http, $q) {
         return defer.promise;
     }
 
-    /**
-     * Set default book img
-     */
+    function calcRating(book) {
+        const sum = book.critic_reviews.reduce((sum, review) => {
+            return sum + review.star_rating;
+        }, 0);
+        return (sum / book.critic_reviews.length).toFixed(1);
+    }
+
     function parseBooks(books) {
         return books.map((book) => {
+            /**
+             * Set default book img
+             */
             if (!book.img) {
                 book.img = 'https://images.freecreatives.com/wp-content/uploads/2015/05/3d-book-smart-object.png';
             }
+
+            /**
+             * Calculate rating
+             */
+            book.rating = book.critic_reviews.length ? calcRating(book) : 0..toFixed(1);
+
             return book;
         });
     }

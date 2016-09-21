@@ -15,12 +15,6 @@ export let HomeComponent = {
             $scope.loading = true;
             $scope.books = [];
 
-            $scope.bookRatingOrder = (book) => {
-                return book.critic_reviews.reduce((sum, review) => {
-                    return sum + review.star_rating;
-                }, 0) / book.critic_reviews.length ;
-            };
-
             BooksService.fetch()
                 .then((books) => {
                     $scope.books = books;
