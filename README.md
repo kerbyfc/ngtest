@@ -7,7 +7,7 @@ My first ng project based on [supernova starter kit](https://github.com/orizens/
 1. ~~Bootstrap~~
 3. ~~Add git repo~~
 3. ~~Initial starter kit cleanup~~
-4. Navbar
+4. ~~Navbar~~
 5. Books fetching
 6. Home (top) page implementation
 7. Book preview page implementation
