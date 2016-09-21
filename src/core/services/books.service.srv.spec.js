@@ -1,5 +1,5 @@
 'use strict';
-import BooksMockJson from '../../../tests/mocks/books.mock';
+import BooksMockJson from '../../../tests/mocks/books.mock.json';
 import CoreServicesModule from './index.js';
 
 describe('Some Service', () => {
