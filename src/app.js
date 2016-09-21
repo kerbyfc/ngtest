@@ -14,8 +14,8 @@ import AppCore from './core';
 import { AppComponent } from './app.component';
 
 import Home from './components/home';
+import Navbar from './components/navbar';
 import {APP_NAME} from './vars';
-
 
 angular.module(APP_NAME, [
   // framework wide components
@@ -29,7 +29,8 @@ angular.module(APP_NAME, [
   AppCore,
 
   // ui-components
-  Home
+  Home,
+  Navbar
 ])
 .config(config)
 .component(AppComponent.selector, AppComponent);
