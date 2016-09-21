@@ -11,9 +11,9 @@ My first ng project based on [supernova starter kit](https://github.com/orizens/
 5. ~~Books fetching~~
 6. ~~Home (top) page implementation~~
 7. ~~Book preview page implementation~~
-8. Search page implementation\
-  8.1. Show all books\
-  8.2. Add filter control\
+8. Search page implementation<br/>
+  8.1. Show all books<br/>
+  8.2. Add filter control<br/>
   8.3 Sorting by name, author & book popularity
 9. Write e2e tests
 10. Cleanup
