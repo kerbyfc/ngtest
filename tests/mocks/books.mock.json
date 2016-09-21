@@ -1,4 +1,4 @@
-module.exports = [
+[
     {
         "title": "A Mind Awake",
         "sub_title": "An Anthology of C. S. Lewis",
@@ -628,4 +628,4 @@ module.exports = [
         "release_date": "1964-01-01",
         "critic_reviews": []
     }
-];
+]
