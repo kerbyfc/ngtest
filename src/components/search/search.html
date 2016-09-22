@@ -1,0 +1,27 @@
+<navbar></navbar>
+
+<div class="panel panel-default search-panel">
+  <div class="panel-heading">
+  </div>
+  <div class="panel-body" ng-show="loading">
+    Loading...
+  </div>
+
+  <ul class="list-group">
+    <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | orderBy: '-rating'">
+      <span class="pull-left book-title">
+        <span class="text-muted">{{$index + 1}}.</span> {{book.title}}
+        <small class="text-muted">by {{book.author}}</small>
+      </span>
+      <span class="pull-right book-rating">
+        <small>{{book.rating}}</small>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </span>
+      <div class="clearfix"></div>
+    </a>
+  </ul>
+
+  <loader-overlay loading="{{loading}}"></loader-overlay>
+</div>
+
+</section>

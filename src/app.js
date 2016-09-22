@@ -16,6 +16,8 @@ import { AppComponent } from './app.component';
 import Home from './components/home';
 import Navbar from './components/navbar';
 import Book from './components/book';
+import Search from './components/search';
+
 import {APP_NAME} from './vars';
 
 angular.module(APP_NAME, [
@@ -32,7 +34,8 @@ angular.module(APP_NAME, [
   // ui-components
   Home,
   Book,
-  Navbar
+  Navbar,
+  Search
 ])
 .config(config)
 .component(AppComponent.selector, AppComponent);
@@ -50,7 +53,11 @@ function config ($stateProvider, $urlRouterProvider, localStorageServiceProvider
     .state('book', {
       url: '/book/:title',
       component: 'book'
-    });
+    })
+    .state('search', {
+      url: '/search/:q',
+      component: 'search'
+    });;
 
   $urlRouterProvider.otherwise('/');
 }
