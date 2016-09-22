@@ -1,19 +1,18 @@
-import './home.less';
-import template from './home.html';
+import './search.less';
+import template from './search.html';
 
-export let HomeComponent = {
+export let SearchComponent = {
     templateUrl: template,
-    selector: 'home',
+    selector: 'search',
     bindings: {},
-    controllerAs: 'ctrl',
 
-    controller: class HomeCtrl {
+    controller: class SearchCtrl {
 
         /* @ngInject */
-        constructor($scope, BooksService) {
-            $scope.title = 'Best 10 Books & Authors';
+        constructor($scope, $state, BooksService) {
             $scope.loading = true;
             $scope.books = [];
+            $scope.q = $state.current.q || '';
 
             BooksService.fetch()
                 .then((books) => {
