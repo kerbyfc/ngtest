@@ -9,21 +9,43 @@ export let loaderOverlay = {
     },
     controllerAs: 'ctrl',
     controller: class LoaderOverlayCtrl {
-        /* @ngInject */
-        constructor($scope, $interval) {
-            let cur = 0;
-            const sprites = ['🕛', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚'];
-            $scope.clock = sprites[cur];
 
+        /* @ngInject */
+        constructor($scope, $timeout) {
+            this.i = 0;
+            this.sprites = ['🕛', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚'];
+            this.scope = $scope;
+            this.timeout = $timeout;
+
+            $scope.clock = this.sprites[this.i];
+
+            this.$onChanges = () => {
+                if (this.isActive()) {
+                    this.animate();
+                }
+            };
+
+            if (this.isActive()) {
+                this.animate();
+            }
+        }
+
+        isActive() {
+            return this.loading === 'true';
+        }
+
+        animate() {
             /**
              * Animation
              */
-            $interval(() => {
-                console.log('here');
-                if (cur === sprites.length - 1) {
-                    cur = -1;
+            this.timeout(() => {
+                if (this.i === this.sprites.length - 1) {
+                    this.i = -1;
                 }
-                $scope.clock = sprites[++cur];
+                this.scope.clock = this.sprites[++this.i];
+                if (this.isActive()) {
+                    this.animate();
+                }
             }, 50);
         }
     }
