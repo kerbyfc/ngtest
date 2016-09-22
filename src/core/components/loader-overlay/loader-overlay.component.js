@@ -10,7 +10,21 @@ export let loaderOverlay = {
     controllerAs: 'ctrl',
     controller: class LoaderOverlayCtrl {
         /* @ngInject */
-        constructor() {
+        constructor($scope, $interval) {
+            let cur = 0;
+            const sprites = ['🕛', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚'];
+            $scope.clock = sprites[cur];
+
+            /**
+             * Animation
+             */
+            $interval(() => {
+                console.log('here');
+                if (cur === sprites.length - 1) {
+                    cur = -1;
+                }
+                $scope.clock = sprites[++cur];
+            }, 50);
         }
     }
 };
