@@ -1,14 +1,39 @@
 <navbar></navbar>
 
-<div class="panel panel-default search-panel">
+<section class="panel panel-default search-panel">
+  <loader-overlay loading="{{loading}}"></loader-overlay>
+
   <div class="panel-heading">
+    <section class="row">
+
+      <!--Search-->
+      <div class="col-xs-6">
+        <input class="form-control" ng-model="q" data-search-input placeholder="search">
+      </div>
+
+      <div class="col-xs-6">
+
+        <!--Sorting-->
+        <div class="pull-right">
+          <div class="btn-group">
+            <label class="btn btn-primary" ng-model="sorting" uib-btn-radio="'rating'">rating</label>
+            <label class="btn btn-primary" ng-model="sorting" uib-btn-radio="'title'">name</label>
+          </div>
+        </div>
+        <label class="btn pull-right">Sort by</label>
+      </div>
+    </section>
   </div>
-  <div class="panel-body" ng-show="loading">
+
+  <div class="clearfix"></div>
+
+  <div class="panel-body" ng-if="loading">
     Loading...
   </div>
 
+
   <ul class="list-group">
-    <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | orderBy: '-rating'">
+    <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | filter:q | orderBy:sorter">
       <span class="pull-left book-title">
         <span class="text-muted">{{$index + 1}}.</span> {{book.title}}
         <small class="text-muted">by {{book.author}}</small>
@@ -20,8 +45,5 @@
       <div class="clearfix"></div>
     </a>
   </ul>
-
-  <loader-overlay loading="{{loading}}"></loader-overlay>
-</div>
 
 </section>
