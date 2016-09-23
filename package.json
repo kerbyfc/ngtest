@@ -5,9 +5,7 @@
   "main": "src/index.html",
   "directories": {},
   "scripts": {
-    "e2e": "protractor protractor.conf.js",
-    "e2ed": "protractor debug protractor.conf.js",
-    "e2e:remote": "protractor ./gulp/config/protractor.conf.bs.js",
+    "e2e": "cucumber-ts-suite ./tests/e2e",
     "clean": "npm run clean:dist && rimraf node_modules/",
     "clean:dist": "rimraf dist/",
     "test": "karma start",
