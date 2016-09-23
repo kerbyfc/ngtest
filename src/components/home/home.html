@@ -13,8 +13,8 @@
       <div class="panel-body" ng-show="loading">
         Loading...
       </div>
-      <ul class="list-group">
-        <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | orderBy: '-rating'">
+      <ul class="list-group" testid="home-top-books-list">
+        <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | orderBy: '-rating' | limitTo: 10">
           <span class="pull-left book-title">
             <span class="text-muted">{{$index + 1}}.</span> {{book.title}}
             <small class="text-muted">by {{book.author}}</small>
@@ -35,8 +35,8 @@
       <div class="panel-body" ng-show="loading">
         Loading...
       </div>
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="book in books | orderBy: '-reviewCount'">
+      <ul class="list-group" testid="home-top-authors-list">
+        <li class="list-group-item" ng-repeat="book in books | orderBy: '-reviewCount' | limitTo: 10">
           <span class="text-muted">{{$index + 1}}.</span> {{book.author}}
         </li>
       </ul>
