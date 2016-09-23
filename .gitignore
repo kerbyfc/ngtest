@@ -12,3 +12,5 @@ error.html
 bundle*.js
 bundle*.map
 *.css.map
+
+error.html
