@@ -18,6 +18,15 @@ My first ng project based on [supernova starter kit](https://github.com/orizens/
 9. ~~Write e2e tests~~
 10. ~~Cleanup~~
 
+##### Roadmap
+1. More tests (search page, 404 redirect and so on) ~ 2oct
+2. Investigate sinon problem for existing unit tests (it's not working out of the box) ~ 2oct
+2. More e2e tests, cucumber-template & cucumber-tsflow-suite need more contributions ~ 10oct`*`
+3. Improve mock, they are poor in case of description and image, some book pages are so ugly... ~ 10oct`*`
+4. Spend more time for ng best practices and apply new knowledges to existing code base ~10oct`*`
+
+`*` - if i'll change my work and have time for this...
+
 ##### Tests
 
 To run tests, use
@@ -30,4 +39,4 @@ To run e2e tests, use
 npm run test:e2e
 ```
 
-![e2e](http://g.recordit.co/xfwTXc16Bi.gif)
+![e2e](https://dl.dropboxusercontent.com/spa/cm6sytebldipwst/u9-xj4g-.png)
