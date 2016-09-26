@@ -19,7 +19,7 @@ My first ng project based on [supernova starter kit](https://github.com/orizens/
 10. ~~Cleanup~~
 
 ##### Roadmap
-1. More tests (search page, 404 redirect and so on) ~ 2oct
+1. More unit tests (search page, 404 redirect and so on) ~ 2oct
 2. Investigate sinon problem for existing unit tests (it's not working out of the box) ~ 2oct
 2. More e2e tests, cucumber-template & cucumber-tsflow-suite need more contributions ~ 10oct`*`
 3. Improve mock, they are poor in case of description and image, some book pages are so ugly... ~ 10oct`*`
