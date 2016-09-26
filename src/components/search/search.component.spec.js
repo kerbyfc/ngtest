@@ -1,21 +1,33 @@
 'use strict';
-import searchModule, { SearchComponent } from './index.js';
+import searchModule, {SearchComponent} from './index.js';
 
 describe('search Component', () => {
-  var ctrl;
+    var ctrl, $scope, fetchCalls;
 
-  beforeEach(window.module(searchModule));
+    beforeEach(window.module(searchModule));
 
-  beforeEach(window.inject(($componentController) => {
-    ctrl = $componentController(SearchComponent.selector, {
-      
+    beforeEach(window.inject(($componentController, $rootScope, $q) => {
+        $scope = $rootScope.$new();
+        fetchCalls = 0;
+        ctrl = $componentController(SearchComponent.selector, {
+            $state: {
+                current: {
+                    q: 'query'
+                }
+            },
+            BooksService: {
+                fetch() {
+                    fetchCalls++;
+                    return $q((resolve) => {
+                        resolve({});
+                    });
+                }
+            },
+            $scope
+        });
+    }));
+
+    it('should fetch books', () => {
+        expect(fetchCalls).toEqual(1);
     });
-  }));
-
-  it('should do what it is supposed to do', () => {
-    const expected = '';
-    const actual = '';
-    expect(actual).toMatch(expected);
-  });
-
 });

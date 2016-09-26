@@ -4,20 +4,20 @@ import HomeModule, {HomeComponent} from './index.js';
 // import HomeMock from '../../../tests/mocks/home.mock.json';
 
 describe('Home Component', () => {
-    var ctrl, myScope;
+    var ctrl, $scope;
 
     beforeEach(window.module(HomeModule));
 
     beforeEach(window.inject(($componentController, $rootScope) => {
-        myScope = $rootScope.$new();
+        $scope = $rootScope.$new();
         ctrl = $componentController(HomeComponent.selector, {
             $state: {},
-            $scope: myScope
+            $scope
         });
     }));
 
     it('should have a title', () => {
         const expected = 'Best 10 Books & Authors';
-        expect(myScope.title).toMatch(expected);
+        expect($scope.title).toMatch(expected);
     });
 });
