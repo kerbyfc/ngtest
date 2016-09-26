@@ -2,7 +2,7 @@
 
 My first ng project based on [supernova starter kit](https://github.com/orizens/supernova-angular-1.5.x-es6-starter)
 
-#### Roadmap
+#### Stages
 
 1. ~~Bootstrap~~
 3. ~~Add git repo~~
