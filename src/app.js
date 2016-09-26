@@ -22,6 +22,7 @@ import Home from './components/home';
 import Navbar from './components/navbar';
 import Book from './components/book';
 import Search from './components/search';
+import P404 from './components/p404';
 
 angular.module('app', [
     // framework wide components
@@ -37,7 +38,8 @@ angular.module('app', [
     Home,
     Book,
     Navbar,
-    Search
+    Search,
+    P404
 ])
     .config(config)
     .component(AppComponent.selector, AppComponent);
@@ -49,7 +51,7 @@ function config($stateProvider, $urlRouterProvider, localStorageServiceProvider)
 
     $stateProvider
         .state('home', {
-            url: '/',
+            url: '',
             component: 'home'
         })
         .state('book', {
@@ -59,9 +61,13 @@ function config($stateProvider, $urlRouterProvider, localStorageServiceProvider)
         .state('search', {
             url: '/search/:q',
             component: 'search'
+        })
+        .state('404', {
+            url: '/404',
+            component: 'p404'
         });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/404');
 }
 
 angular.element(document).ready(() => {

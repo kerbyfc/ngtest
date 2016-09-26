@@ -13,18 +13,26 @@ export let BookComponent = {
             $scope.loading = true;
             $scope.book = null;
 
+            this.$state = $state;
+            this.$scope = $scope;
+
             BooksService.fetch()
                 .then((books) => {
-                    for (let i = 0; i < books.length; i++) {
-                        if (books[i].title === $scope.title) {
-                            $scope.book = books[i];
-                            break;
-                        }
-                    }
+                    this.findBook(books);
                 })
                 .finally(() => {
                     $scope.loading = false;
                 });
+        }
+
+        findBook(books) {
+            for (let i = 0; i < books.length; i++) {
+                if (books[i].title === this.$scope.title) {
+                    this.$scope.book = books[i];
+                    return;
+                }
+            }
+            this.$state.go('404');
         }
     }
 };

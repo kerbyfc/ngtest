@@ -1,5 +1,6 @@
 'use strict';
 import bookModule, {BookComponent} from './index.js';
+import BooksMock from '../../../tests/mocks/books.mock.json';
 
 describe('book Component', () => {
     var ctrl, $scope, fetchCalls;
@@ -12,16 +13,15 @@ describe('book Component', () => {
         ctrl = $componentController(BookComponent.selector, {
             $state: {
                 params: {
-                    title: 'title'
+                    title: 'A%20Mind%20Awake'
                 }
             },
             BooksService: {
                 fetch() {
                     fetchCalls++;
                     return $q((resolve) => {
-                        resolve([
-                            {title: 'title'}
-                        ]);
+                        ctrl.findBook(BooksMock);
+                        resolve(BooksMock);
                     });
                 }
             },
@@ -29,7 +29,12 @@ describe('book Component', () => {
         });
     }));
 
-    it('should fetch books', () => {
-        expect(fetchCalls).toEqual(1);
+    it('should fetch books', (next) => {
+        setTimeout(() => {
+            expect(fetchCalls).toEqual(1);
+            console.log($scope.book, $scope.title);
+            next();
+        })
     });
+
 });
