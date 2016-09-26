@@ -1,15 +1,14 @@
 {
-  "name": "supernova-angular-1.5.x-es6-starter",
-  "version": "0.0.3",
-  "description": "starter kit for angular > 1.5.x, > es6, karma and jasmine",
+  "name": "ngtest",
+  "version": "1.0.0",
+  "description": "angular test app",
   "main": "src/index.html",
-  "directories": {},
   "scripts": {
     "clean": "rimraf dist/",
     "test": "karma start",
     "test:debug": "DEBUG=true npm test",
     "test:bdd": "BDD=true npm test",
-    "test:e2e": "cucumber-ts-suite ./tests/e2e",
+    "test:e2e": "./node_modules/.bin/cucumber-tsflow-suite ./tests/e2e",
     "start": "npm run dev",
     "dev": "webpack-dev-server --hot --inline --progress --colors --content-base src --port 9001",
     "prod": "npm run clean:dist && webpack --config=webpack.config.production.js -p",
@@ -77,7 +76,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
-    "cucumber-tsflow-suite": "^1.0.0"
+    "cucumber-tsflow-suite": "git+ssh://git@github.com:kerbyfc/cucumber-tsflow-suite.git#master"
   },
   "dependencies": {
     "json-loader": "^0.5.4"
