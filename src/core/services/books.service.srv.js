@@ -34,7 +34,7 @@ export default function BookService($http, $q) {
              * Set default book img
              */
             if (!book.img) {
-                book.img = 'https://images.freecreatives.com/wp-content/uploads/2015/05/3d-book-smart-object.png';
+                book.img = 'http://2.bp.blogspot.com/-d9XGJtm2Nqg/VlSlvaE3iNI/AAAAAAAAAes/us4XZUA4_wg/s1600/mystery-book-300x225.jpg';
             }
 
             /**
