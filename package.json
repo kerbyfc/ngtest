@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/orizens/supernova-angular-1.5.x-es6-starter.git"
+    "url": "https://github.com/kerbyfc/ngtest.git"
   },
   "keywords": [
     "angular",
@@ -25,7 +25,7 @@
     "es6",
     "jasmine"
   ],
-  "author": "Oren Farhi",
+  "author": "Alex Lukin",
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
