@@ -38,5 +38,3 @@ To run e2e tests, use
 ```
 npm run test:e2e
 ```
-
-![e2e](https://dl.dropboxusercontent.com/spa/cm6sytebldipwst/u9-xj4g-.png)
