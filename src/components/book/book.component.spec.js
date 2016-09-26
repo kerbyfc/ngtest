@@ -28,9 +28,15 @@ describe('book Component', () => {
         });
     }));
 
-    it('should fetch books', (next) => {
+    it('should fetch books and show information for proper book', (next) => {
         setTimeout(() => {
             expect(fetchCalls).toEqual(1);
+            $scope.$apply();
+
+            expect($scope.loading).toEqual(false);
+            expect($scope.book.title).toEqual('A Mind Awake');
+            expect($scope.book.title).toEqual($scope.title);
+
             next();
         });
     });
