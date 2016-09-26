@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-angular.module(app)
+angular.module('app')
     .config(config);
 
 /* @ngInject */
