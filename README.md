@@ -14,6 +14,20 @@ My first ng project based on [supernova starter kit](https://github.com/orizens/
 8. Search page implementation<br/>
   8.1. ~~Show all books~~<br/>
   8.2. ~~Add filter control~~<br/>
-  8.3 ~~Sorting by name & book rating~~
-9. Write e2e tests
+  8.3. ~~Sorting by name & book rating~~
+9. ~~Write e2e tests~~
 10. Cleanup
+
+##### Tests
+
+To run unit tests
+```
+npm test
+```
+
+To run e2e tests:
+```
+npm run e2e
+```
+
+![e2e](http://g.recordit.co/xfwTXc16Bi.gif)
