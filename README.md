@@ -16,7 +16,7 @@ My first ng project based on [supernova starter kit](https://github.com/orizens/
   8.2. ~~Add filter control~~<br/>
   8.3. ~~Sorting by name & book rating~~
 9. ~~Write e2e tests~~
-10. Cleanup
+10. ~~Cleanup~~
 
 ##### Tests
 
@@ -27,7 +27,7 @@ npm test
 
 To run e2e tests, use
 ```
-npm run e2e
+npm run test:e2e
 ```
 
 ![e2e](http://g.recordit.co/xfwTXc16Bi.gif)
