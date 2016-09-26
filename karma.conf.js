@@ -36,6 +36,10 @@ const options = {
                 loader: 'ngtemplate!html',
                 exclude: /(index)/
             }, {
+                test: /\.json$/,
+                loader: 'json',
+                exclude: /(index)/
+            }, {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract('css?sourceMap!' +
                     'less?sourceMap')

@@ -20,7 +20,6 @@ describe('book Component', () => {
                 fetch() {
                     fetchCalls++;
                     return $q((resolve) => {
-                        ctrl.findBook(BooksMock);
                         resolve(BooksMock);
                     });
                 }
@@ -32,9 +31,8 @@ describe('book Component', () => {
     it('should fetch books', (next) => {
         setTimeout(() => {
             expect(fetchCalls).toEqual(1);
-            console.log($scope.book, $scope.title);
             next();
-        })
+        });
     });
 
 });
