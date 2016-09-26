@@ -11,7 +11,7 @@ describe('search Component', () => {
         fetchCalls = 0;
         ctrl = $componentController(SearchComponent.selector, {
             $state: {
-                current: {
+                params: {
                     q: 'query'
                 }
             },
