@@ -33,7 +33,7 @@
 
 
   <ul class="list-group">
-    <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | filter:q | orderBy:sorter">
+    <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | filter:filterByTitle | orderBy:sorter">
       <span class="pull-left book-title">
         <span class="text-muted">{{$index + 1}}.</span> {{book.title}}
         <small class="text-muted">by {{book.author}}</small>

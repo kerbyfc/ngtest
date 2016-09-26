@@ -60,7 +60,13 @@ function config($stateProvider, $urlRouterProvider, localStorageServiceProvider)
         })
         .state('search', {
             url: '/search/:q',
-            component: 'search'
+            component: 'search',
+            params: {
+                q: {
+                    value: "",
+                    dynamic: true
+                }
+            }
         })
         .state('404', {
             url: '/404',
