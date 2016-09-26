@@ -10,7 +10,8 @@ export default angular
     .config(['$httpProvider', function ($httpProvider) {
 
         /**
-         * For test purposes only.
+         * Emulate network latency while mocks fetching
+         * For test task purposes only.
          */
         $httpProvider.interceptors.push([
             '$q', '$timeout',
@@ -19,7 +20,7 @@ export default angular
                 var delay = Math.random();
 
                 return {
-                    'response': function(response) {
+                    'response': function (response) {
                         var defer = $q.defer();
 
                         if (typeof(response.data) !== 'object') {
@@ -28,7 +29,7 @@ export default angular
 
                         $timeout(function () {
                             defer.resolve(response);
-                        }, delay * 3000);
+                        }, delay * 2000);
 
                         return defer.promise;
                     }

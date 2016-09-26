@@ -1,10 +1,9 @@
 import angular from 'angular';
-import {APP_NAME} from '../vars';
 
-angular.module(APP_NAME)
+angular.module('app')
     .config(config);
 
 /* @ngInject */
-function config ($compileProvider) {
-	$compileProvider.debugInfoEnabled(true);
+function config($compileProvider) {
+    $compileProvider.debugInfoEnabled(true);
 }

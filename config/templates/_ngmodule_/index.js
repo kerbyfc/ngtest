@@ -9,7 +9,8 @@ export default angular.module('_ngmodule_', [
 ])
 	.config(config)
 	.component(=ngmodule=Component.selector, =ngmodule=Component)
-.name;
+    .name;
+
 /* @ngInject */
 function config () {
 

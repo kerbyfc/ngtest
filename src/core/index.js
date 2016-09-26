@@ -3,7 +3,6 @@ import components from './components';
 import services from './services';
 
 export default angular.module('app.core', [
-  components.name,
-  services.name
-])
-.name;
+    components.name,
+    services.name
+]).name;

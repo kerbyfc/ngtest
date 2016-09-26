@@ -1,7 +1,5 @@
 'use strict';
 import HomeModule, {HomeComponent} from './index.js';
-// if a mock json object is needed for tests
-// import HomeMock from '../../../tests/mocks/home.mock.json';
 
 describe('Home Component', () => {
     var ctrl, $scope;

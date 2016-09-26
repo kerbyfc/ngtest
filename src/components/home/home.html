@@ -14,7 +14,8 @@
         Loading...
       </div>
       <ul class="list-group" testid="home-top-books-list">
-        <a href="#/book/{{book.title}}" class="list-group-item" ng-repeat="book in books | orderBy: '-rating' | limitTo: 10">
+        <a href="#/book/{{book.title}}" class="list-group-item"
+           ng-repeat="book in books | orderBy: '-rating' | limitTo: 10">
           <span class="pull-left book-title">
             <span class="text-muted">{{$index + 1}}.</span>
             <span testid="book-title-text">{{book.title}}</span>

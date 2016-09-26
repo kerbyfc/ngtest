@@ -5,6 +5,7 @@ export let NavbarComponent = {
     templateUrl: template,
     selector: 'navbar',
     bindings: {},
+
     controller: class NavbarCtrl {
         /* @ngInject */
         constructor($scope, $location) {

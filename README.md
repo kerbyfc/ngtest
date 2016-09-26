@@ -20,12 +20,12 @@ My first ng project based on [supernova starter kit](https://github.com/orizens/
 
 ##### Tests
 
-To run unit tests
+To run tests, use
 ```
 npm test
 ```
 
-To run e2e tests:
+To run e2e tests, use
 ```
 npm run e2e
 ```

@@ -5,8 +5,6 @@ export default function _ngservice_(dependencies) {
   };
   return service;
 
-  ////////////////
-
   function func() {
   }
 }
